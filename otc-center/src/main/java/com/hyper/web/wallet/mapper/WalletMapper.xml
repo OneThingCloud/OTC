@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyper.web.wallet.mapper.WalletMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hyper.web.wallet.domain.Wallet">
+        <id column="account" property="account" />
+        <result column="money" property="money" />
+        <result column="totalnum" property="totalnum" />
+        <result column="lasttranstamount" property="lasttranstamount" />
+        <result column="lasttype" property="lasttype" />
+        <result column="lasttranstime" property="lasttranstime" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        account, money, totalnum, lasttranstamount, lasttype, lasttranstime, createtime, updatetime, status
+    </sql>
+	
+	<update id="updateOrlWallet">
+		<![CDATA[ 
+			update t_wallet set `status` = 0
+			where 1=1
+			and `status` = 1
+			and lasttranstime <= '2018-01-16'
+		]]>
+	</update>
+
+</mapper>
