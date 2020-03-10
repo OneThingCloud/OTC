@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 /**
  * 
  * @ClassName  BaseController 
- * @author  jie_huang@woyitech.com
  * @date  2017年7月19日 上午9:10:47
  */
 public abstract class BaseController {
